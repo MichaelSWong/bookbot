@@ -24,11 +24,11 @@ def main():
 
             for char in chars:
                 if char.isalpha():
-                    char_set.add(char)
-            
-            for char in char_set:
-                res[char] = chars.count(char)
-
+                    if char in res:
+                        res[char]+=1
+                    else:
+                        res[char] = 1
+                    
             return res
 
     def print_report():
@@ -42,5 +42,6 @@ def main():
 
     # Function Calls
     print_report()
+    count_characters()
 
 main()

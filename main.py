@@ -3,6 +3,7 @@ def main():
         with open("books/frankenstein.txt") as f:
             file_contents = f.read()
             print(file_contents)
+    
     def word_count():
         with open("books/frankenstein.txt") as f:
             file_contents = f.read()
@@ -11,7 +12,26 @@ def main():
             for word in words:
                 count+=1
             print(count)
-    print_words()
-    word_count()
+    
+    def count_characters():
+        with open("books/frankenstein.txt") as f:
+            file_contents = f.read()
+            chars = []
+            char_set = set()
+            res = {}
+            for char in file_contents:
+                chars.append(char.lower())
+
+            for char in chars:
+                if char.isalpha():
+                    char_set.add(char)
+            
+            for char in char_set:
+                res[char] = chars.count(char)
+
+            print(res)
+
+    # Function Calls
+    count_characters()
 
 main()

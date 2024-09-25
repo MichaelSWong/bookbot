@@ -11,7 +11,7 @@ def main():
             count = 0
             for word in words:
                 count+=1
-            print(count)
+            return count
     
     def count_characters():
         with open("books/frankenstein.txt") as f:
@@ -29,9 +29,20 @@ def main():
             for char in char_set:
                 res[char] = chars.count(char)
 
-            print(res)
+            print("Characters found: ", res)
+            return res
+
+    def print_report():
+        print(f"--- Begin report of books/frankenstein.txt ---")
+        print(f"{word_count()} words found in the document")
+        for key, value in count_characters().items():
+            print(f"The '{key}' character was found {value} times")
+
+            #print(f"The '{char}': was found {count_characters()[char]} times")
+        print(f"--- End report of books/frankenstein.txt ---")
 
     # Function Calls
     count_characters()
+    print_report()
 
 main()

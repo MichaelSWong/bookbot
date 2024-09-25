@@ -29,7 +29,6 @@ def main():
             for char in char_set:
                 res[char] = chars.count(char)
 
-            print("Characters found: ", res)
             return res
 
     def print_report():
@@ -42,7 +41,6 @@ def main():
         print(f"--- End report of books/frankenstein.txt ---")
 
     # Function Calls
-    count_characters()
     print_report()
 
 main()
